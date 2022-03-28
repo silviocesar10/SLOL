@@ -1,7 +1,8 @@
 # SLOL
 Sistema de Locação de Obras Literárias
-#Manutenção de Cadastro
-Cadastro de clientes
-Cadastro de exempleres
-Reserva para emprestimo
-devolução de exemplar
+
+## Manutenção de Cadastro
+1. Cadastro de clientes
+2. Cadastro de exempleres
+3. Reserva para emprestimo
+4. devolução de exemplar
