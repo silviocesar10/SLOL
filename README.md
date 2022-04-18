@@ -2,7 +2,12 @@
 Sistema de Locação de Obras Literárias
 
 ## Manutenção de Cadastro
-1. Cadastro de clientes
-2. Cadastro de exempleres
-3. Reserva para emprestimo
-4. devolução de exemplar
+- Cadastro de clientes
+- Cadastro de Livros (inserir, remover, altera, cadastrar)
+- Cadastro de Categorias de Livros (inserir, remover, altera, cadastrar)
+
+## Processos de Negocio
+- Reserva de Livros (inserir, remover, altera, cadastrar)
+
+## Listagem/Relatorios do Sistema
+- Listagem de reservas (com filtro de datas e soma da quantidade, e com  filtro por titulo)
