@@ -11,7 +11,7 @@ import javax.validation.constraints.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(of = {"id"})
+@EqualsAndHashCode(of = {"idPessoa"})
 public abstract class Pessoa implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -48,8 +48,9 @@ public abstract class Pessoa implements Serializable{
     @NotBlank(message = "CPF da Pessoa deve ser preenchido")
     @Size(min = 2, max = 50, message = "CPF da Pessoa deve ter entre 2 e 50 letras")
     @Pattern(regexp="\\d{3}.\\d{3}.\\d{3}-\\d{2}", message = "CPF da Pessoa deve seguir o padrão NNN.NNN.NNN-NN")
-	private Integer cpf;
+	private String cpf;
 	
+	@NotBlank(message = "O campo de telefone nao deve estar vazio!!")
 	private String telefone;
 	 
 }
