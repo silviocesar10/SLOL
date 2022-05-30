@@ -1,0 +1,3 @@
+SELECT * FROM reservas rsv, livro lvr
+WHERE rsv.idLivro = lvr.idLivro
+AND SUM(rsv.dataEntrega, rsv.periodoEmprestimo) = SUM(dataEntrega, periodoEmprestimo da reserva que quero registrar)
