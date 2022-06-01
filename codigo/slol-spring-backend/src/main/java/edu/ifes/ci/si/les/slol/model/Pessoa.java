@@ -21,9 +21,7 @@ public abstract class Pessoa implements Serializable{
 	private Integer idPessoa;
 	 
 	@Column(length = 50)
-	@NotNull
-	//@Constraint(validatedBy = {NotBlankValidator.class})
-	@NotBlank(message = "O nome da pessoa nao pode ficar em braco, deve ser preenchido!!")
+	@NotNull(message = "O nome nao deve ficar em branco")
 	@Size(min = 2, max = 50, message = "O nome deve ter entre 2 e 50 letras")
 	private String nome;
 	
