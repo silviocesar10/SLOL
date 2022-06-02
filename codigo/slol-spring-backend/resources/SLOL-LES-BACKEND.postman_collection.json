@@ -1,0 +1,465 @@
+{
+	"info": {
+		"_postman_id": "bada0960-4695-4d8e-95dd-aa4ac990099e",
+		"name": "SLOL-LES-BACKEND",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15667479"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "http://localhost:8080/clientes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/clientes/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/clientes/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"idPessoa\": 3,\n        \"nome\": \"Carlos\",\n        \"dataNascimento\": \"1999-07-06\",\n        \"bairro\": \"brasil1\",\n        \"rua\": \"Maria 1\",\n        \"cidade\": \"br1\",\n        \"cpf\": \"000.000.000-01\",\n        \"telefone\": \"(28)99999-9999\",\n        \"temPlano\": true\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/clientes/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"idPessoa\": 3,\n        \"dataNascimento\": \"1999-07-06\",\n        \"bairro\": \"brasil1\",\n        \"rua\": \"Maria 1\",\n        \"cidade\": \"br1\",\n        \"cpf\": \"000.000.000-01\",\n        \"telefone\": \"(28)99999-9999\",\n        \"temPlano\": true\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/clientes/3",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"idPessoa\": 3,\n        \"nome\": \"Carlos da Silva\",\n        \"dataNascimento\": \"1999-07-07\",\n        \"bairro\": \"brasil12\",\n        \"rua\": \"Maria 12\",\n        \"cidade\": \"br12\",\n        \"cpf\": \"000.001.000-01\",\n        \"telefone\": \"(28)99999-9991\",\n        \"temPlano\": false\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/clientes/3",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Livros",
+			"item": [
+				{
+					"name": "http://localhost:8080/livros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/livros/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/livros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"livros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/livros/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\n        \"idLivro\": 3,\n        \"tituloLivro\": \"O Pequeno Príncipe\",\n        \"descricao\": \"Le Petit Prince é uma novela do escritor, aviador aristocrata francês Antoine de Saint-Exupéry,originalmente publicada em inglês e francês em abril de 1943 nos Estados Unidos.\",\n        \"numISBN\": \"852-20-0026-3\",\n        \"autor\": \"Antoine de Saint-Exupéry\",\n        \"anoPublicacao\": \"1993-04-01\",\n        \"categoriaLivro\": {\n            \"idCategoria\": 2\n    }   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/livros/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"livros",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/livros/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\n        \"idLivro\": 3,\n        \"tituloLivro\": \"O Pequeno Príncipe\",\n        \"descricao\": \"Le Petit Prince é uma novela do escritor, aviador aristocrata francês Antoine de Saint-Exupéry,originalmente publicada em inglês e francês em abril de 1943 nos Estados Unidos.\",\n        \"numISBN\": \"852-20-0026-3\",\n        \"autor\": \"Antoine de Saint-Exupéry\",\n        \"anoPublicacao\": \"1993-04-01\",\n        \"categoriaLivro\": {\n            \"idCategoria\": 2\n    }   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/livros/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"livros",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/livros/3",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\n        \"idLivro\": 3,\n        \"tituloLivro\": \"O Pequeno Príncipe 2\",\n        \"descricao\": \"Le Petit Prince é uma novela do escritor, aviador aristocrata francês Antoine de Saint-Exupéry,originalmente publicada em inglês e francês em abril de 1943 nos Estados Unidos.\",\n        \"numISBN\": \"852-20-0026-3\",\n        \"autor\": \"Antoine de Saint-Exupéry\",\n        \"anoPublicacao\": \"1993-04-01\",\n        \"categoriaLivro\": {\n            \"idCategoria\": 2\n    }   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/livros/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"livros",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/livros/3",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categoria Livro",
+			"item": [
+				{
+					"name": "http://localhost:8080/categoriaslivro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categoriaslivro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoriaslivro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/categoriaslivro/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categoriaslivro/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoriaslivro",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/categoriaslivro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idCategoria\": 3,\n    \"nomeCategoria\": \"Acao\",\n    \"descCategoria\": \"Livros com historias de acao\",\n    \"dataCadastro\": \"2022-05-18\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categoriaslivro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoriaslivro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/categoriaslivro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idCategoria\": 3,\n    \"descCategoria\": \"Livros com historias de acao\",\n    \"dataCadastro\": \"2022-05-18\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categoriaslivro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoriaslivro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/categoriaslivro/3",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idCategoria\": 3,\n    \"nomeCategoria\": \"Acao & Aventura\",\n    \"descCategoria\": \"Livros com historias de acao\",\n    \"dataCadastro\": \"2022-05-18\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categoriaslivro/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoriaslivro",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/categoriaslivro/3",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categoriaslivro/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categoriaslivro",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
