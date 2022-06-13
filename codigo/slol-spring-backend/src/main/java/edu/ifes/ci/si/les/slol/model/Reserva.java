@@ -24,6 +24,9 @@ public class Reserva implements Serializable{
 	
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date dataRetirada;
+	
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private Date dataEntrega;
 	 
 	/**
 	 * the value became 0 if the client has a month plan 
