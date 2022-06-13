@@ -1,27 +1,28 @@
 package edu.ifes.ci.si.les.slol.services;
 
-//import java.util.Collection;
-//import java.util.NoSuchElementException;
+import java.util.Collection;
+import java.util.NoSuchElementException;
 
-//import edu.ifes.ci.si.les.slol.model.Reserva;
-//import edu.ifes.ci.si.les.slol.repositories.ReservaRepository;
+
+import edu.ifes.ci.si.les.slol.model.Reserva;
+import edu.ifes.ci.si.les.slol.repositories.ReservaRepository;
 //import edu.ifes.ci.si.les.slol.model.Cliente;
-//import edu.ifes.ci.si.les.slol.repositories.ClienteRepository;
-//import edu.ifes.ci.si.les.slol.services.exceptions.DataIntegrityException;
-//import edu.ifes.ci.si.les.slol.services.exceptions.ObjectNotFoundException;
-//import edu.ifes.ci.si.les.slol.services.exceptions.BusinessRuleException;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.dao.DataIntegrityViolationException;
-//import org.springframework.stereotype.Service;
+import edu.ifes.ci.si.les.slol.model.Livro;
+import edu.ifes.ci.si.les.slol.services.exceptions.DataIntegrityException;
+import edu.ifes.ci.si.les.slol.services.exceptions.ObjectNotFoundException;
+import edu.ifes.ci.si.les.slol.services.exceptions.BusinessRuleException;
+import edu.ifes.ci.si.les.slol.utils.LocalDateOperations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.stereotype.Service;
 
-//@Service
+
+
+@Service
 public class ReservaService {
-	/*
-	 * @Autowired
-	private ReservaRepository repository;
 	
 	@Autowired
-	//private ClienteRepository clienteRepository;
+	private ReservaRepository repository;
 	
 	public Reserva findById(Integer id) {
     	try {
@@ -36,10 +37,6 @@ public class ReservaService {
         return repository.findAll();
     }
     
-    //public Reserva findByLivroAndStatus(Integer idLivro, Integer status) {
-      //  return repository.findByLivroAndStatus(idLivro, status);
-    //}
-
     public Reserva insert(Reserva obj) {
         try {
         	if(verificarRegrasDeNegocio1(obj)) {
@@ -70,26 +67,38 @@ public class ReservaService {
         }
     }
 
-    //public Collection<Reserva> findByClienteAndPeriodo(Integer idCliente, String inicio, String termino) {
-      //  return repository.findByClienteAndPeriodo(idCliente, inicio, termino);
-    //}
+    public Collection<Reserva> findByClienteAndPeriodo(Integer idCliente, String inicio, String termino) {
+        return repository.findByClienteAndPeriodo(idCliente, inicio, termino);
+    }
 
-    //public Collection<?> findQuantidadesReservasOfClientesByPeriodo(String inicio, String termino){
-      //  return repository.findQuantidadesReservasOfClientesByPeriodo(inicio, termino);
-    //}
+    public Integer findQuantidadesReservasOfClientesByPeriodo(String inicio, String termino){
+       return repository.findQuantidadesReservasOfClientesByPeriodo(inicio, termino);
+    }
     
-    // Implementando as regras de negócio relacionadas ao processo de negócio Reserva
- 	// Regra de Negócio 1: Cliente não pode ter multas não pagas
+    public Collection<Reserva> findByReservaConflict(Livro lvr, String data)
+    {
+    	return repository.findByReservaConflict(lvr, data);
+    }
+   
+    
+    //mplementando as regras de negócio relacionadas ao processo de negócio Reserva
+ 	//Regra de Negócio 1: Cliente não pode ter multas não pagas
  	public boolean verificarRegrasDeNegocio1(Reserva obj) {
- 		//Collection<Reserva> tmp = repository.findAll();
- 		//var datatmp = obj.getDataRetirada();
- 		//for(Reserva item : tmp)
- 		//{
- 			//if (item.getDataReserva() == datatmp)
- 			//{
- 				//return false;
- 			//}
- 		//}
+ 		LocalDateOperations operator = new LocalDateOperations(); 
+ 		int periodo =obj.getPeriodoEmprestimo();
+ 		String data = obj.getDataRetirada().toString();
+ 		for(int i =periodo; i > 0; i--)
+ 		{
+ 			data = operator.addNDay(data, i);
+ 			Collection<Reserva> lst = findByReservaConflict(obj.getLivro(), data);
+ 			if(!lst.isEmpty())
+ 			{
+ 				throw new BusinessRuleException("O periodo de reserva que compreende a data de retirada e a data de entrega esta em conflito, selecione outro periodo");
+ 				
+ 			}
+ 		}
  		return true;
- 	}*/
+ 	}
+ 	
+ 	
 }
