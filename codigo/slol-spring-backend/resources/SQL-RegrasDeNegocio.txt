@@ -1,3 +1,3 @@
-SELECT * FROM reservas rsv, livro lvr
-WHERE rsv.idLivro = lvr.idLivro
-AND SUM(rsv.dataEntrega, rsv.periodoEmprestimo) = SUM(dataEntrega, periodoEmprestimo da reserva que quero registrar)
+SELECT * FROM reserva rsv
+WHERE  rsv.id_livro = ?1 
+AND ?2 <= rsv.data_entrega AND ?2 >= rsv.data_retirada;
