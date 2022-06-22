@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ifes.ci.si.les.scv.controller.FXMLVBoxMainController">
+    <children>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="Cadastros">
+                    <items>
+                        <MenuItem fx:id="menuItemCadastrosLivros" mnemonicParsing="false" onAction="#handleMenuItemCadastrosLivros" text="Livros" />
+                  <MenuItem fx:id="menuItemCadastrosClientes" mnemonicParsing="false" onAction="#handleMenuItemCadastrosClientes" text="Clientes" />
+                  <MenuItem fx:id="menuItemCadastrosCategoriaLivro" mnemonicParsing="false" onAction="#handleMenuItemCadastrosCategoriaLivro" text="CategoriaLivros" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Processos">
+                    <items>
+                        <MenuItem fx:id="menuItemProcessosEmprestimos" mnemonicParsing="false" onAction="#handleMenuItemProcessosEmprestimos" text="Reservas" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Relatórios">
+               <items>
+                  <MenuItem fx:id="menuItemRelatoriosEmprestimosPorClientePeriodo" mnemonicParsing="false" onAction="#handleMenuItemRelatoriosEmprestimosPorClientePeriodo" text="Empréstimos (Por Cliente e Período)" />
+                  <MenuItem fx:id="menuItemRelatoriosEmprestimosPorClienteTotalQuantidade1" mnemonicParsing="false" onAction="#handleMenuItemRelatoriosEmprestimosPorClienteTotalQuantidade" text="Empréstimos (Totais e Quantidades por Cliente)" />
+               </items></Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane fx:id="anchorPane" prefHeight="376.0" prefWidth="600.0" />
+    </children>
+</VBox>

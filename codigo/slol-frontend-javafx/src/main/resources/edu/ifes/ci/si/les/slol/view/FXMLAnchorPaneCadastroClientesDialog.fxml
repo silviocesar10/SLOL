@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="442.0" prefWidth="471.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ifes.ci.si.les.scv.controller.FXMLAnchorPaneCadastrosUFsDialogController">
+    <children>
+        <Group layoutX="48.0" layoutY="-11.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+        <GridPane layoutX="26.0" layoutY="25.0" prefHeight="341.0" prefWidth="343.0" AnchorPane.rightAnchor="214.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="82.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.0" minWidth="10.0" prefWidth="195.0" />
+            </columnConstraints>
+            <rowConstraints>
+            <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="145.0" minHeight="0.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label fx:id="labelClienteNome" text="Nome" GridPane.rowIndex="1" />
+                <Label fx:id="labelClienteTelefone" text="Telefone" GridPane.rowIndex="2" />
+                <TextField fx:id="textFieldUFSigla" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="textFieldUFNome" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Código" />
+            <Label fx:id="labelUFId" GridPane.columnIndex="1" />
+            <Label fx:id="labelClienteCPF" text="CPF" GridPane.rowIndex="3" />
+            <Label fx:id="labelClienteDataNascimento" text="Data Nascimento" GridPane.rowIndex="4" />
+            <Label fx:id="labelClienteRua" text="Rua" GridPane.rowIndex="5" />
+            <Label fx:id="labelClienteCidade" text="Cidade" GridPane.rowIndex="7" />
+            <Label fx:id="labelClienteBairro" text="Bairro" GridPane.rowIndex="6" />
+            </children>
+        </GridPane>
+          <Button fx:id="buttonConfirmar" layoutY="394.0" mnemonicParsing="false" onAction="#handleButtonConfirmar" prefHeight="25.0" prefWidth="70.0" text="Confirmar" />
+          <Button fx:id="buttonCancelar" layoutX="102.0" layoutY="394.0" mnemonicParsing="false" onAction="#handleButtonCancelar" prefHeight="25.0" prefWidth="70.0" text="Cancelar" />
+    </children>
+</AnchorPane>

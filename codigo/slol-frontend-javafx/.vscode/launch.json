@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Main<scv-frontend-javafx>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "edu.ifes.ci.si.les.scv.Main",
+            "projectName": "scv-frontend-javafx",
+            "args": ""
+        }
+    ]
+}
