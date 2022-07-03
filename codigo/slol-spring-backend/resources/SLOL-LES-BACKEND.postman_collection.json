@@ -62,7 +62,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"idPessoa\": 3,\n        \"nome\": \"Carlos\",\n        \"dataNascimento\": \"1999-07-06\",\n        \"bairro\": \"brasil1\",\n        \"rua\": \"Maria 1\",\n        \"cidade\": \"br1\",\n        \"cpf\": \"000.000.000-01\",\n        \"telefone\": \"(28)99999-9999\",\n        \"temPlano\": true\n    }",
+							"raw": "{\n        \"nome\": \"Carlos\",\n        \"dataNascimento\": \"1999-07-06\",\n        \"bairro\": \"brasil1\",\n        \"rua\": \"Maria 1\",\n        \"cidade\": \"br1\",\n        \"cpf\": \"000.000.000-01\",\n        \"telefone\": \"(28)99999-9999\",\n        \"temPlano\": true\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -120,7 +120,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"idPessoa\": 3,\n        \"nome\": \"Carlos da Silva\",\n        \"dataNascimento\": \"1999-07-07\",\n        \"bairro\": \"brasil12\",\n        \"rua\": \"Maria 12\",\n        \"cidade\": \"br12\",\n        \"cpf\": \"000.001.000-01\",\n        \"telefone\": \"(28)99999-9991\",\n        \"temPlano\": false\n    }",
+							"raw": "{\n        \"idPessoa\": 3,\n        \"nome\": \"Carlos da Silva Teste\",\n        \"dataNascimento\": \"1999-07-07\",\n        \"bairro\": \"brasil12\",\n        \"rua\": \"Maria 12\",\n        \"cidade\": \"br12\",\n        \"cpf\": \"000.001.000-01\",\n        \"telefone\": \"(28)99999-9991\",\n        \"temPlano\": false\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -222,7 +222,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "   {\n        \"idLivro\": 3,\n        \"tituloLivro\": \"O Pequeno Príncipe\",\n        \"descricao\": \"Le Petit Prince é uma novela do escritor, aviador aristocrata francês Antoine de Saint-Exupéry,originalmente publicada em inglês e francês em abril de 1943 nos Estados Unidos.\",\n        \"numISBN\": \"852-20-0026-3\",\n        \"autor\": \"Antoine de Saint-Exupéry\",\n        \"anoPublicacao\": \"1993-04-01\",\n        \"categoriaLivro\": {\n            \"idCategoria\": 2\n    }   }",
+							"raw": "   {\n        \"tituloLivro\": \"O Pequeno Príncipe\",\n        \"descricao\": \"Le Petit Prince é uma novela do escritor, aviador aristocrata francês Antoine de Saint-Exupéry,originalmente publicada em inglês e francês em abril de 1943 nos Estados Unidos.\",\n        \"numISBN\": \"852-20-0026-3\",\n        \"autor\": \"Antoine de Saint-Exupéry\",\n        \"anoPublicacao\": \"1993-04-01\",\n        \"categoriaLivro\": {\n            \"idCategoria\": 2\n    }   }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -454,6 +454,157 @@
 							"path": [
 								"categoriaslivro",
 								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reserva",
+			"item": [
+				{
+					"name": "http://localhost:8080/reservas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reservas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/reservas/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reservas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/reservas/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"dataReserva\": \"2023-05-18\",\n        \"dataRetirada\": \"2027-07-06\",\n        \"dataEntrega\": \"2027-07-09\",\n        \"valor\": 3.9,\n        \"periodoEmprestimo\": 3,\n        \"cliente\" :{\n            \"idPessoa\": 1 \n        },\n        \"livro\":{\n            \"idLivro\": 1\n        }\n    }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/reservas/6",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n    {\n        \"idReserva\": 6,\n        \"dataReserva\": \"2023-05-18\",\n        \"dataRetirada\": \"2028-07-06\",\n        \"dataEntrega\": \"2028-07-09\",\n        \"valor\": 3.9,\n        \"periodoEmprestimo\": 3,\n        \"cliente\" :{\n            \"idPessoa\": 1 \n        },\n        \"livro\":{\n            \"idLivro\": 2\n        }\n    }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservas/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/reservas/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"dataReserva\": \"2023-05-18\",\n        \"dataRetirada\": \"2027-07-06\",\n        \"dataEntrega\": \"2027-07-09\",\n        \"valor\": 3.9,\n        \"periodoEmprestimo\": 3,\n        \"cliente\" :{\n            \"idPessoa\": 1 \n        },\n        \"livro\":{\n            \"idLivro\": 1\n        }\n    }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/reservas/6",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reservas/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas",
+								"6"
 							]
 						}
 					},
