@@ -1,3 +1,10 @@
-SELECT * FROM reserva rsv
-WHERE  rsv.id_livro = ?1 
-AND ?2 <= rsv.data_entrega AND ?2 >= rsv.data_retirada;
+Regra de negocio 1
+SELECT * FROM RESERVA 
+WHERE RESERVA.ID_LIVRO = 1 
+AND ('2022-05-03' >= RESERVA.DATA_RETIRADA AND '2022-05-03' <= RESERVA.DATA_ENTREGA) OR ('2022-05-07' >= RESERVA.DATA_RETIRADA AND '2022-05-07' <= RESERVA.DATA_ENTREGA);
+
+Regra de negocio 2
+SELECT * FROM reserva rsv 
+WHERE rsv.id_pessoa = ?1 
+AND extract(month FROM rsv.data_reserva) =extract(month FROM (SELECT CURRENT_DATE))
+AND extract(year FROM rsv.data_reserva) = extract(year FROM (SELECT CURRENT_DATE));
