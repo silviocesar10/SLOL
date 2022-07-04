@@ -533,35 +533,6 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/reservas/6",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\n    {\n        \"idReserva\": 6,\n        \"dataReserva\": \"2023-05-18\",\n        \"dataRetirada\": \"2028-07-06\",\n        \"dataEntrega\": \"2028-07-09\",\n        \"valor\": 3.9,\n        \"periodoEmprestimo\": 3,\n        \"cliente\" :{\n            \"idPessoa\": 1 \n        },\n        \"livro\":{\n            \"idLivro\": 2\n        }\n    }\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/reservas/6",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"reservas",
-								"6"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "http://localhost:8080/reservas/",
 					"request": {
 						"method": "POST",
@@ -585,6 +556,64 @@
 							"path": [
 								"reservas",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/reservas/ Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"dataReserva\": \"2022-07-18\",\n        \"dataRetirada\": \"2029-07-06\",\n        \"dataEntrega\": \"2029-07-09\",\n        \"valor\": 3.9,\n        \"periodoEmprestimo\": 3,\n        \"cliente\" :{\n            \"idPessoa\": 2 \n        },\n        \"livro\":{\n            \"idLivro\": 1\n        }\n    }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/reservas/6",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n    {\n        \"idReserva\": 6,\n        \"dataReserva\": \"2023-05-18\",\n        \"dataRetirada\": \"2028-07-06\",\n        \"dataEntrega\": \"2028-07-09\",\n        \"valor\": 3.9,\n        \"periodoEmprestimo\": 3,\n        \"cliente\" :{\n            \"idPessoa\": 1 \n        },\n        \"livro\":{\n            \"idLivro\": 2\n        }\n    }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservas/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas",
+								"6"
 							]
 						}
 					},
