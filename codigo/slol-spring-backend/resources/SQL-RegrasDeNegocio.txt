@@ -8,3 +8,54 @@ SELECT * FROM reserva rsv
 WHERE rsv.id_pessoa = ?1 
 AND extract(month FROM rsv.data_reserva) =extract(month FROM (SELECT CURRENT_DATE))
 AND extract(year FROM rsv.data_reserva) = extract(year FROM (SELECT CURRENT_DATE));
+
+Relatorio
+select c.nome as nome, count(r.valor) as quantidade, l.autor, l.titulo_livro 
+from reserva r, livro l, cliente c 
+where r.id_pessoa = c.id_pessoa
+and r.id_livro = l.id_livro 
+group by c.nome , l.autor, l.titulo_livro;
+
+
+select c.nome as nome, count(r.valor) as quantidade, l.autor, l.titulo_livro 
+from reserva r, livro l, cliente c 
+where r.id_pessoa = c.id_pessoa
+and r.id_livro = l.id_livro
+and DATA_RESERVA > '2022-01-01' 
+and DATA_RESERVA < '2029-12-31'
+and l.titulo_livro = 'Harry Potter e a Pedra Filosofal'    
+group by c.nome , l.autor, l.titulo_livro;
+
+select c.nome as nome, count(r.valor) as quantidade, l.autor, l.titulo_livro 
+from reserva r, livro l, cliente c 
+where r.id_pessoa = c.id_pessoa
+and r.id_livro = l.id_livro
+and DATA_RESERVA > '2022-01-01' 
+and DATA_RESERVA < '2029-12-31'
+and l.titulo_livro = (SELECT titulo_livro from livro where livro.titulo_livro LIKE 'Harry Potter%')    
+group by c.nome , l.autor, l.titulo_livro;
+
+
+
+/*select CLIENTE.NOME as nome, count(VALOR) as quantidade 
+from RESERVA 
+inner join CLIENTE on RESERVA.ID_PESSOA = CLIENTE.ID_PESSOA 
+where DATA_RESERVA > '2022-01-01' 
+and DATA_RESERVA < '2022-12-31' 
+group by CLIENTE.NOME
+
+SELECT CLIENTE.NOME as nome, count(VALOR) as quantidade, livro.autor, livro.titulo_livro 
+FROM RESERVA 
+inner join CLIENTE on RESERVA.ID_PESSOA = CLIENTE.ID_PESSOA 
+inner join RESERVA on livro.id_livro = RESERVA.id_livro 
+where DATA_RESERVA > '2022-01-01' 
+and DATA_RESERVA < '2029-12-31'  
+group by CLIENTE.NOME
+
+
+SELECT CLIENTE.NOME as nome, count(VALOR) as quantidade, livro.autor, livro.titulo_livro 
+FROM RESERVA inner join CLIENTE on RESERVA.ID_PESSOA = CLIENTE.ID_PESSOA 
+inner join CLIENTE on livro.id_livro = RESERVA.id_livro 
+where DATA_RESERVA > '2022-01-01' 
+and DATA_RESERVA < '2029-12-31'  
+group by CLIENTE.NOME, titulo_livro*/
