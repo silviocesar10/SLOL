@@ -1,6 +1,7 @@
 package edu.ifes.ci.si.les.slol.services;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.NoSuchElementException;
 import edu.ifes.ci.si.les.slol.model.Cliente;
 import edu.ifes.ci.si.les.slol.model.Livro;
@@ -12,6 +13,8 @@ import edu.ifes.ci.si.les.slol.services.exceptions.BusinessRuleException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+
+
 
 
 
@@ -43,7 +46,7 @@ public class ReservaService {
     public Reserva insert(Reserva obj) {
     	Livro livro = livroService.findById(obj.getLivro().getIdLivro());
     	Cliente cliente = clienteService.findById(obj.getCliente().getIdPessoa());
-    	
+    	System.out.println("inserts");
     	obj.setLivro(livro);
     	obj.setCliente(cliente);
     	
@@ -113,6 +116,7 @@ public class ReservaService {
 
  	public boolean verificarRegrasDeNegocio2(Reserva obj)
  	{
+ 		System.out.println("Regra de neogico 2");
  			//aqui eu faco a conversao das datas para o formato correto para verificar
  			//se o cliente se encaixa no requisito de no minimo de 3 reservas no mes
  			Collection<Reserva> lst = repository.findByClienteAndPeriodoInMonth(obj.getCliente().getIdPessoa());
@@ -146,4 +150,15 @@ public class ReservaService {
 		}
  		return res;
  	}
+ 	
+ 	
+    public Collection<?> findTotaisAndQuantidadesReservasOfClientesByPeriodo(Date inicio, Date termino) {
+        Collection<?> collection = repository.findQuantidadesReservasOfClientesByPeriodo(inicio, termino);
+        return collection;
+    }
+
+    public Collection<?> findQuantidadesReservas() {
+        Collection<?> collection = repository.findQuantidadesReservasOfClientes();
+        return collection;
+    }
 }
