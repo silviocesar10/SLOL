@@ -640,6 +640,66 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Reserva_Relatorios",
+			"item": [
+				{
+					"name": "http://localhost:8080/reservas/findTotaisAndQuantidadesReservasOfClientesByPeriodo/2012-05-01/2029-05-12",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reservas/findQuantidadesReservasOfClientesByPeriodo/2012-01-01/2029-12-12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas",
+								"findQuantidadesReservasOfClientesByPeriodo",
+								"2012-01-01",
+								"2029-12-12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/reservas/findTotaisAndQuantidadesReservasOfClientes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reservas/findQuantidadesReservasOfClientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reservas",
+								"findQuantidadesReservasOfClientes",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
