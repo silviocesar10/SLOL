@@ -5,6 +5,7 @@ import java.util.Collection;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.Date;
 
 //import edu.ifes.ci.si.les.slol.model.Livro;
 import edu.ifes.ci.si.les.slol.model.Reserva;
@@ -22,8 +24,9 @@ import edu.ifes.ci.si.les.slol.services.exceptions.ConstraintException;
 @RestController
 @RequestMapping(value = "/reservas")
 public class ReservaController {
-	 @Autowired
+	 	@Autowired
 	    private ReservaService service;
+	 	
 
 	    @RequestMapping(method = RequestMethod.GET)
 	    public ResponseEntity<Collection<Reserva>> findAll() {
@@ -58,5 +61,16 @@ public class ReservaController {
 	        service.delete(id);
 	        return ResponseEntity.noContent().build();
 	    }
+	    
+	@RequestMapping(value = "/findQuantidadesReservasOfClientesByPeriodo/{inicio}/{termino}", method = RequestMethod.GET)
+    public ResponseEntity<Collection<?>> findTotaisAndQuantidadesReservasOfClientesByPeriodo(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date inicio, @PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date termino) {
+        Collection<?> collection = service.findTotaisAndQuantidadesReservasOfClientesByPeriodo(inicio, termino);
+        return ResponseEntity.ok().body(collection);
+    }
 
+    @RequestMapping(value = "/findQuantidadesReservasOfClientes/", method = RequestMethod.GET)
+    public ResponseEntity<Collection<?>> findQuantidadesReservas() {
+        Collection<?> collection = service.findQuantidadesReservas();
+        return ResponseEntity.ok().body(collection);
+    }
 }
