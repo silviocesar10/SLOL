@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Profile;
 import edu.ifes.ci.si.les.slol.services.*;
 
 @Configuration
-@Profile("dev")
+@Profile("prod")
 public class TestConfig {
 	
 	@Autowired
